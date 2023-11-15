@@ -1,4 +1,6 @@
-﻿namespace BodyMasssIndex.GUI
+﻿using BodyMasssIndex.GUI.ViewModels;
+
+namespace BodyMasssIndex.GUI
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +9,8 @@
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModels();
+
         }
     }
 

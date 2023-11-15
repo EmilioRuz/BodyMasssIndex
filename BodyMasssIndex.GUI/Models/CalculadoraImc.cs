@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BodyMasssIndex.GUI.Models
+﻿namespace BodyMasssIndex.GUI.Models
 {
+    //Creacion de la clase CalculadoraImc
     public class CalculadoraImc
     {
         public static double IndiceDeMasaCorporal(double peso, double estatura)
             => peso /Math.Pow(estatura, 2);
 
-
+        //Se declaran los tipos de pesos
         public enum EstadoNutricional
         {
             Pesobajo,
@@ -20,7 +15,7 @@ namespace BodyMasssIndex.GUI.Models
             Obesidad,
             ObesidadExtrema
         }
-
+        //Dependiendo del resultado de la division entre el peso y la altura,se generara un tipo de respuesta
         public static EstadoNutricional SituacionNutricional(double imc)
         {
             if (imc < 18.5)

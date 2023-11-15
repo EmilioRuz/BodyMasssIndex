@@ -2,6 +2,7 @@
 
 namespace BodyMasssIndex.GUI.Models
 {
+    //Creacion de la clase persona
     public class Persona
     {
         public string? Nombre { get; set; }
