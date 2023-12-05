@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BodyMasssIndex.Console.Models
+﻿
+namespace CalculadoraDeIndiceDeMasaCorporal.Models
 {
     public class CalculadoraImc
     {
-        public static double IndiceDeMasaCorporal(double peso, double estatura)
-            => peso /Math.Pow(estatura, 2);
-
-
         public enum EstadoNutricional
         {
             Pesobajo,
@@ -21,21 +12,24 @@ namespace BodyMasssIndex.Console.Models
             ObesidadExtrema
         }
 
-        public static EstadoNutricional SituacionNutricional(double imc)
+        public static decimal IndiceDeMasaCorporal(decimal peso, decimal estatura)
+            => peso / (estatura * estatura);
+
+        public static EstadoNutricional SituacionNutricional(decimal imc)
         {
-            if (imc < 18.5)
+            if (imc < 18.5M)
             {
                 return EstadoNutricional.Pesobajo;
             }
-            else if (imc < 25.0)
+            else if (imc < 25.0M)
             {
                 return EstadoNutricional.Pesonormal;
             }
-            else if (imc < 30.0)
+            else if (imc < 30.0M)
             {
                 return EstadoNutricional.Sobrepeso;
             }
-            else if (imc < 40.0)
+            else if (imc < 40.0M)
             {
                 return EstadoNutricional.Sobrepeso;
             }

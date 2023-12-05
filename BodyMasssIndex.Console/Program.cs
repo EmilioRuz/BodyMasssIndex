@@ -1,35 +1,56 @@
-﻿using BodyMasssIndex.Console.Models;
+﻿using CalculadoraDeIndiceDeMasaCorporal.Models;
 
-string? nombre;
-double peso;
-double estatura;
-double imc;
 
+    string? nombre;
+decimal peso;
+decimal estatura;
+decimal imc;
 Persona persona;
+string estadoNutricional;
 
 
 Console.WriteLine("Aplicacion que calcula el indice de masa corporal de una persona");
 
-Console.Write("proporcione el nombre de la persona: ");
-nombre  = Console.ReadLine();
-peso = ReadDouble("proporcione los kilogramos de la persona:");
-estatura = ReadDouble("proporcione la estatura de la persona:");
-
-persona = new Persona(nombre, peso, estatura);
-
-imc = CalculadoraImc.IndiceDeMasaCorporal(persona.Peso, persona.Estatura);
-
-Console.WriteLine($"indice de masa corporal de {nombre}: {imc:F4}");
-
-Console.WriteLine($"La situacion nutricional de {persona.Nombre} es {SituacionNutricionalComoTexto(imc)}");
-double ReadDouble(string s)
+try
 {
-    Console.Write(s);
-    string? linea = Console.ReadLine();
-    return Convert.ToDouble(linea);
+    // Entrada de datos
+    Console.Write("Proporcione el nombre de la persona: ");
+    nombre = Console.ReadLine();
+    
+    peso = ReadDecimal("Peso de la persona en kilogramos: ");
+    estatura = ReadDecimal("Estatura de la persona en metros: ");
+    
+    // Procesamiento
+    persona = new Persona(nombre, peso, estatura);
+    imc = CalculadoraImc
+        .IndiceDeMasaCorporal(persona.Peso, persona.Estatura);
+    estadoNutricional = SituacionNutricionalComoTexto(imc);
+    // Salida de datos
+    Console.WriteLine();
+    
+    Console.WriteLine($"{persona.Nombre} pesa {persona.Peso} kilogramos y mide " +
+        $"{persona.Estatura} metros.\n");
+    
+    Console.WriteLine($"{persona.Nombre} tiene un índice de masa corporal de {imc} kg/m2.");
+    
+    Console.WriteLine($"La situación nutricional de {persona.Nombre} es {estadoNutricional}");
 }
-
-string SituacionNutricionalComoTexto(double imc)
+catch (Exception ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+    decimal ReadDecimal(string s) 
+{ 
+    decimal numero; 
+    Console.Write(s); 
+    string? entrada = Console.ReadLine(); 
+    if (!decimal.TryParse(entrada, out numero)) 
+    { 
+        throw new FormatException("El valor proporcionado no es un número."); 
+    }
+    return numero; 
+}
+    string SituacionNutricionalComoTexto(decimal imc)
 {
     CalculadoraImc.EstadoNutricional estadoNutrcional =
         CalculadoraImc.SituacionNutricional(imc);

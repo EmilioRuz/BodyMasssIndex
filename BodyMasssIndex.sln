@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodyMasssIndex.Console", "BodyMasssIndex.Console\BodyMasssIndex.Console.csproj", "{82C3751E-8E33-4E2D-BDBE-E33AA6D41C35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BodyMasssIndex.Console", "BodyMasssIndex.Console\BodyMasssIndex.Console.csproj", "{82C3751E-8E33-4E2D-BDBE-E33AA6D41C35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodyMasssIndex.GUI", "BodyMasssIndex.GUI\BodyMasssIndex.GUI.csproj", "{3A277E5D-A17E-4676-BA36-69E5522D9B12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BodyMasssIndex.GUI", "BodyMasssIndex.GUI\BodyMasssIndex.GUI.csproj", "{3A277E5D-A17E-4676-BA36-69E5522D9B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndiceDeMasaCorporal.Models", "IndiceDeMasaCorporal.Models\IndiceDeMasaCorporal.Models.csproj", "{1203AF2E-6105-4364-BB18-48F23367ADEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{3A277E5D-A17E-4676-BA36-69E5522D9B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A277E5D-A17E-4676-BA36-69E5522D9B12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A277E5D-A17E-4676-BA36-69E5522D9B12}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1203AF2E-6105-4364-BB18-48F23367ADEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1203AF2E-6105-4364-BB18-48F23367ADEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1203AF2E-6105-4364-BB18-48F23367ADEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1203AF2E-6105-4364-BB18-48F23367ADEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

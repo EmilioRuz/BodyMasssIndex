@@ -1,14 +1,14 @@
 ﻿
 
-namespace BodyMasssIndex.Console.Models
+namespace IndiceDeMasaCorporal.Models
 {
     public class Persona
     {
         public string? Nombre { get; set; }
-        public double Peso { get; set; }
-        public double Estatura { get; set; }
+        public decimal Peso { get; set; }
+        public decimal Estatura { get; set; }
 
-        public Persona(string? nombre, double peso, double estatura)
+        public Persona(string? nombre, decimal peso, decimal estatura)
         {
             Nombre = nombre;
             Peso = peso;
